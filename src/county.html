@@ -1,0 +1,197 @@
+<div id="main-page-content">
+
+    <div class="main" id="sidebar-and-map">
+        <div class="sidebar-opener"><i class="fa fa-chevron-right"></i></div>
+        <div class="sidebar-closer"><i class="fa fa-chevron-left"></i></div>
+        <div id="sidebar">
+            <h1 data-field="countyname" class="pl-2">&nbsp;</h1>
+            <div><!-- scrolling content, height is sidebar minus h1 -->
+                <p id="outoforder" class="p-2"></p>
+
+                <div class="px-2 mb-3">
+                    <h2 class="m-0">Suggested Vote Center and Drop Box Areas <i class="fa fa-info-circle" data-tooltip-content='#tooltips > div[data-tooltip="suggestedareas"]'></i></h2>
+                    <div data-section="suggestedareas" class="pl-3">
+                    </div>
+                </div>
+
+                <div class="px-2 mb-3">
+                    <h2 class="m-0">Additional Vote Center Options <i class="fa fa-info-circle" data-tooltip-content='#tooltips > div[data-tooltip="additionalareas"]'></i></h2>
+                    <div data-section="additionalareas" class="pl-3">
+                    </div>
+                </div>
+
+                <div class="px-2 mb-1">
+                    <h2 class="m-0" id="additionaldata-title">Additional Data</h2><!-- txt will change based on initAdditionalDataWording() -->
+                    <div>
+                        <button class="btn btn-link px-0 py-2" type="button" data-toggle="collapse" data-target="#accordion-sitingcriteria" aria-controls="accordion-sitingcriteria" aria-expanded="false">
+                            <h3 class="m-0">Demographic and Voter Data <i class="fa fa-chevron-right"></i></h3>
+                        </button>
+                        <div class="collapse pl-3 pb-3" data-section="sitingcriteria" id="accordion-sitingcriteria">
+                        </div>
+
+                        <button class="btn btn-link px-0 py-2" type="button" data-toggle="collapse" data-target="#accordion-populationdata" aria-controls="accordion-populationdata" aria-expanded="false">
+                            <h3 class="m-0">Population Data <i class="fa fa-chevron-right"></i></h3>
+                        </button>
+                        <div class="collapse pl-3 pb-3" data-section="populationdata" id="accordion-populationdata">
+                        </div>
+
+                        <button class="btn btn-link px-0 py-2" type="button" data-toggle="collapse" data-target="#accordion-pointsofinterest" aria-controls="accordion-pointsofinterest" aria-expanded="false">
+                            <h3 class="m-0">Points of Interest <i class="fa fa-chevron-right"></i></h3>
+                        </button>
+                        <div class="collapse pl-3 pb-3" data-section="pointsofinterest" id="accordion-pointsofinterest">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="clearselections" class="d-none px-2">
+                    <a href="javascript:void(0);">Clear all selections <i class="fa fa-times-circle"></i></a>
+                </div>
+            </div><!--/scrolling content-->
+        </div><!--/sidebar-->
+        <div id="countymap" class="map-with-sidebar">touch </div>
+    </div>
+
+</div>
+
+
+
+<div id="tooltips" class="d-none">
+    <!-- see i icons with data-tooltip+ attributes, and initTooltips() -->
+    <div data-tooltip="suggestedareas">
+        <b>Suggested Areas</b> based on the minimum number requirement established by the County.
+    </div>
+    <div data-tooltip="additionalareas">
+        <b>Additional Vote Center Options</b> are areas that can be considered beyond the minimum number requirement established by the County.
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-usingthistool" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Using This Tool</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-4">
+                    <b class="d-block">1. Open the menu to get started.</b>
+                    <img src="./images/usingthistool/click_menu.jpg" alt="Click Menu" class="img-fluid d-block ml-3 mb-3" />
+                </div>
+                <div class="mb-4">
+                    <b class="d-block">2. Select a suggested area option. <i>Note that some counties do not include suggested areas, and that vote center names may be slightly different than in this example.</i></b>
+                    <img src="./images/usingthistool/click_vote_site.jpg" alt="Select Areas" class="img-fluid d-block ml-3" />
+                </div>
+                <div class="mb-4">
+                    <b class="d-block">3. Click on an area to view site data.</b>
+                    <img src="./images/usingthistool/click_specific_vote_site.jpg" alt="Click Site" class="img-fluid d-block ml-3" />
+                </div>
+                <div class="mb-4">
+                    <b class="d-block">4. Click additional data to view on map.</b>
+                    <img src="./images/usingthistool/additional_data.jpg" alt="Additional Data" class="img-fluid d-block ml-3" />
+                </div>
+                <div class="mb-4">
+                    <b class="d-block">5. Type an address or city name to locate on map.</b>
+                    <img src="./images/usingthistool/search_address1.jpg" alt="Search City/Address" class="img-fluid d-block ml-3 mb-3" />
+                    <img src="./images/usingthistool/search_address2.jpg" alt="Search City/Address" class="img-fluid d-block ml-3" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-download" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Data Descriptions and Download</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <h4>Data Descriptions</h4>
+
+                <h5>Suggested Vote Center Data</h5>
+                <p>Sites are colored based on their relative rank out of all potential sites as determined using  <a target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization"> natural breaks</a>. The individual components of the composite score are displayed in the legend as being either <b>High</b>, <b>Med</b> or <b>Low</b>. The <b>High/Med/Low</b> are based on the distribution of scores for each component and ranked using natural breaks.</p>
+                <ol>
+                    <li><b>Suggested Sites</b>: Sites that have been identified as being strategically located to voters and fulfilling requirements of VCA. This reflects the minimum number of sites required. </li>
+                    <li>
+                        <b>Additional Suggested Sites</b>:  Sites that are suggested if additional sites over the required minimum are desired. These sites assume the existence of the <b>Suggested Sites</b>.
+                        <ul>
+                            <li><i>Based on Model</i>: Additional 10% of sites that were generated from the Facility Location Model which minimize the total travel cost for all people in the county.</li>
+                            <li><i>Based on Distance</i>: Additional sites that were identified based on their potential to decrease travel times for communities that have travel times over ~15 minutes to their nearest site.</li>
+                        </ul>
+                    </li>
+                    <li><b>All Suitable Sites</b>:  These are all sites that had a minimum of population, built environment, roads, etc. where a vote site could potentially be located. This site can be used to identify nearby sites with similar scores if the suggested site does not contain an actual reasonable voting location. </li>
+                </ol>
+
+                <h5>Points of Interest</h5>
+                <p>
+                    Points of Interest (POI) are sourced from <a target="_blank" rel="nofollow" href="https://www.openstreetmap.org/">OpenStreetMap</a>. The POIs are intended to help identify potential voting sites, or highlight that an area has some concentration of activity.
+                </p>
+                <ul>
+                    <li><b>Non-Government POIs</b>: These include schools, hospitals, kindergartens, community centers, arts centers, colleges, universities, malls, nursing homes, supermarkets, hostels and motels.</li>
+                    <li><b>Government POIs</b>: These include post offices, fire stations, libraries, town halls, public buildings, police stations and courthouses.</li>
+                </ul>
+
+                <h5>Indicator Data</h5>
+                <ul>
+                    <li><b>Transit Stops</b>: Transit points indicate the location of transit stops in the county and are sourced from regional <a target="_blank" rel="nofollow" href="http://gtfs.org/">GTFS</a> data feeds. Transit stops have been ranked from low to high use based on the frequency of service to the individual stop.</li>
+                    <li><b>County Percentage of Voting Age Citizens</b>: The number of citizens in this tract who are voting age divided by the county's total number of voting age citizens.</li>
+                    <li><b>County Worker Percentage</b>: The percent of employed county residents in a tract out of the total employed county residents in the county.</li>
+                    <li><b>Eligible Non-Registered Voter Rate</b>: The percentage of voting age citizens who are not registered to vote.</li>
+                    <li><b>Percent Disabled Population</b>: The percentage of the population that is disabled.</li>
+                    <li><b>Percent Latino Population</b>: The percentage of the population that is Hispanic or Latino.</li>
+                    <li><b>Percent Limited English Proficient Population</b>: The percentage of the population that has limited English proficiency.</li>
+                    <li><b>Percent of Population with Vehicle Access</b>: The percentage of the population with access to a vehicle.</li>
+                    <li><b>Percent of the Population in Poverty</b>: The percentage of the population with income below the poverty level.</li>
+                    <li><b>Percent of the Youth Population</b>: The percentage of the population between the age of 18 and 24 years old.</li>
+                    <li><b>Polling Place Voter Percentage</b>: The number of voters who voted at a polling place divided by the total number of voters who voted at a polling place in the county.</li>
+                    <li><b>Population Density</b>: The total population density per square kilometer.</li>
+                    <li><b>Vote by Mail Rate (Asian-American)</b>: The percentage of Asian-American voters who voted by mail.</li>
+                    <li><b>Vote by Mail Rate (Latino)</b>: The percentage of Latino voters who voted by mail.</li>
+                    <li><b>Vote by Mail Rate (Total)</b>: The percentage of voters who voted by mail.</li>
+                    <li><b>Vote by Mail Rate (Youth)</b>: The percentage of voters between the age of 18 and 24 years old who voted by mail.</li>
+                </ul>
+
+                <h5>Population Data</h5>
+                <ul>
+                    <li><b>Percent African-American Population</b>: Percent of the tract population that is African-American alone, not Hispanic or Latino.</li>
+                    <li><b>Percent Asian-American Population</b>: Percent of the tract population that is Asian-American alone, not Hispanic or Latino.</li>
+                    <li><b>Percent Latino Population</b>: The percentage of the population that is Hispanic or Latino.</li>
+                    <li><b>Percent White Population</b>: Percent of the tract population that is White alone, not Hispanic or Latino.</li>
+                </ul>
+
+                <h4>Data Downloads</h4>
+                <ul id="modal-download-filedownloads">
+                    <!-- see initDownloadModal() -->
+                </ul>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-busy" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="busyspinner"><div></div><div></div><div></div></div>
+                <p>One moment please</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<!-- common header for all pages; see style_header.css -->
+<head>
+    <title>CID | Wisconsin Voting Location Siting Tool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MK3MBMX');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- FontAwesome free -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-basemapbar.css" />
+    <script src="./mapcontrols/leaflet-control-basemapbar.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-credits.css" />
+    <script src="./mapcontrols/leaflet-control-credits.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-zoombar.css" />
+    <script src="./mapcontrols/leaflet-control-zoombar.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-legend-countymap.css" />
+    <script src="./mapcontrols/leaflet-control-legend-countymap.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-legend-statewidemap.css" />
+    <script src="./mapcontrols/leaflet-control-legend-statewidemap.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-suggestedareadetails.css" />
+    <script src="./mapcontrols/leaflet-control-suggestedareadetails.js"></script>
+    <link rel="stylesheet" href="./mapcontrols/leaflet-control-countypicker.css" />
+    <script src="./mapcontrols/leaflet-control-countypicker.js"></script>
+
+    <script src="./mapcontrols/leaflet-pattern.js"></script>
+
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+    <!-- PapaParse CSV reader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
+    <!-- Tooltipster for awesome tooltips -->
+    <script src="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/js/tooltipster.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/tooltipster.bundle.min.css" />
+
+    <!-- Select2 for awesome typeahead autocomplete select boxes -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <!-- CID's their custom fonts -->
+    <script type="text/javascript" src="//use.typekit.net/ik/81KyWw-P0tRr2BNy7TRVniBRuWryxEWo2xx_-lCIllwfenIIfFHN4UJLFRbh52jhWD9ajRyRFhF8wQmqFAsKZR9o5AZKF2Zyjy7gMkG0jAFu-WsoShFGZAsude80ZkoRdhXCHKoyjamTiY8Djhy8ZYmC-Ao1Oco8if37OcBDOcu8OfG0dABXifuljAyydKu7-2stO1FUiABkZWF3jAF8OcFzdP37O1FUiABkZWF3jAF8ShFGZAsude80ZkoRdhXCjAFu-WsoShFGZAsude80ZkoRdhXCjAFu-WsoShFGZAsude80Zko0ZWbCjWw0dA9Cjh8qO1mDjko8ZY9CdeNRjAUGdaFXOeuyiYbldABGjAtl-c6XpfoDSWmyScmDSeBRZPoRdhXCSaBujW48SagyjhmDjhy8ZYmC-Ao1OcFzdPUaiaS0jAFu-WsoShFGZAsude80ZkoRdhXCiaiaOcBRiA8XpWFR-emqiAUTdcS0dcmXOYiaikoySkolZPUaiaS0jh8qO1mDjko8ZY9CiaiaOcuyiYbldABGjAtl-c6XpfoDSWmyScmDSeBRZPoRdhXCiaiaO1FUiABkZWF3jAF8ShFGZAsude80ZkoRdhXKghFydeUudcIKfAZuiYmkjPu3ifJeZWmkdagyH6qJq2MbMg62JMJ7fbRV2UMMeMS6MKG4fFMVIMMjIPMfH6qJt1qbMs6eJMJ7fbKTpsMfeMw6MKG4fHToIMJjgfMfH6qJ7YqbMy6YJMJ7f6RRy6IbMy6FJMJ7f6R8y6IbMy6sJMHbMdhMcL6B.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- polyfills -->
+    <script src="https://unpkg.com/url-search-params-polyfill@2.0.3/index.js" type="text/javascript"></script>
+
+    <!-- statistics library to calculate Jenks breaks et al-->
+    <script src="./simple_statistics.js?cachebust-d48c98f031"></script>
+
+    <!-- Sitewide styles and code; more for additional pages, will be included below -->
+    <link rel="stylesheet" href="./sitewide.css?cachebust-b2ff84c5cd" />
+    <script src="./sitewide.js?cachebust-0a644745f8"></script>
+    <link rel="stylesheet" href="./index.css?cachebust-df585d5928" />
+    <script src="./index.js?cachebust-aa7f7e1d70"></script>
+</head>
+<body>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK3MBMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- common navbar for all pages; see style_navbar.css -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./"><img class="header-logo" src="./images/cid-logo.png" srcset="./images/cid-logo.png 1x, images/cid-logo@2x.png 2x" alt="Center for Inclusive Democracy"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./accessibility.html">Accessibility</a></li>
+            <li class="nav-item"><a class="nav-link" href="./methodology.html">Methodology</a></li>
+            <li class="nav-item"><a class="nav-link" href="./acknowledgments.html">Acknowledgments</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://cid.usc.edu/" target="_blank">CID</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid" id="main-page-content">
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h1>Wisconsin Voting Location Siting Tool</h1>
+          <p>
+              Developed by the Center for Inclusive Democracy (CID) at the University of Southern California, formerly the California Civic Engagement Project, this interactive web-based mapping tool is designed to assist Wisconsin elections officials in the state’s 27 most populous counties.
+          </p>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-8 offset-lg-2">
+            <div id="statemap"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <h1>About The Tool</h1>
+            <p>
+              The Wisconsin Voting Location Siting Tool aids election officials in the siting process with multiple types of community-level demographic and voter data, each viewable in separate interactive maps. Election officials and communities can use these data to identify voting locations or to plan voter outreach.
+            </p>
+            <p>
+              In the first phase, CID will be releasing multiple types of community-level demographic and voter data, each viewable in separate interactive maps. Communities can immediately begin using this data to start identifying voting locations or to organize voter outreach.
+            </p>
+            <p>
+              In phase two, additional data modeling by CID will bring together all the voting and demographic data into one single interactive layered map, which can then be used by communities to further identify placement of local optimized voting locations.
+            </p>
+        </div>
+    </div>
+
+</div>
+<!-- common footer for all pages; see style_footer.css -->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <img src="./images/usc-logo.png" title="University of Southern California Logo" style="margin-right: 10px;" />
+                &copy; 2018 <a href="https://cid.usc.edu/" target="_blank">CID</a>
+            </div>
+            <div class="col-12 col-sm-6 text-md-right">
+                Updated by <a href="https://www.greeninfo.org/">GreenInfo Network</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

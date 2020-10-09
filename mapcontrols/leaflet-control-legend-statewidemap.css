@@ -1,0 +1,33 @@
+.leaflet-statewidemaplegend-control {
+    background-color:white;
+}
+.leaflet-statewidemaplegend-control .legend-entry {
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    font-size: 14px;
+}
+.leaflet-statewidemaplegend-control .legend-entry:first-child {
+    padding-top: 0.5em;
+}
+.leaflet-statewidemaplegend-control .legend-entry:last-child {
+    padding-bottom: 0.5em;
+}
+
+.leaflet-statewidemaplegend-control .legend-swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border: 1px solid black;
+    vertical-align: text-top;
+}
+.leaflet-statewidemaplegend-control .legend-swatch.legend-swatch-fullmodel {
+    background-color: #fecd1b;
+    opacity: 0.75;
+}
+.leaflet-statewidemaplegend-control .legend-swatch.legend-swatch-lite {
+    background-color: #fecd1b;
+    opacity: 0.4;
+}
+.leaflet-statewidemaplegend-control .legend-swatch.legend-swatch-none {
+    background-color: white;
+}

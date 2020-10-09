@@ -1,0 +1,175 @@
+/**
+ * BASIC SIDEBAR AND MAP CONCEPT
+ */
+
+body {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+#sidebar-and-map {
+    height: calc(100vh - 132px);  /* viewport minus header & footer */
+    position: relative;
+}
+
+#countymap {
+    height: 100%;
+    width: 100%;
+    float: left;
+
+    cursor: crosshair; /* cuz there's a click handler */
+}
+
+#countymap.map-with-sidebar {
+    width: calc(100% - 450px); /* match to #sidebar width and #sidebar div.sidebar-closer left */
+}
+
+#sidebar {
+    height: 100%;
+    width: 450px;  /* match to #countymap.map-with-sidebar width and #sidebar div.sidebar-closer left */
+    float: left;
+}
+
+#sidebar-and-map div.sidebar-opener, #sidebar-and-map div.sidebar-closer {
+    position: absolute;
+    z-index: 1000;
+
+    background-color: white;
+    border-bottom-right-radius: 5px;
+    padding: 5px 10px 5px 5px;
+    cursor: pointer;
+
+    box-shadow: 5px 0px 10px 0px silver;
+}
+#sidebar-and-map div.sidebar-opener {
+    top: 0;
+    left: 0;
+}
+#sidebar-and-map div.sidebar-closer {
+    top: 0;
+    left: 450px;  /* match to #countymap.map-with-sidebar width */
+}
+#sidebar-and-map div.sidebar-opener i, #sidebar-and-map div.sidebar-closer i {
+    font-size: 28px;
+    color: black;
+}
+
+@media screen and (max-width: 700px) {  /* mobile, Sidebar isn't on the side but full-size */
+    #sidebar {
+        width: 100%;
+    }
+    #countymap.map-with-sidebar {
+        visibility: hidden;
+    }
+}
+@media screen and (max-width: 700px) {
+    #sidebar-and-map div.sidebar-closer {
+        right: 0;
+        left: auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    #sidebar-and-map div.sidebar-closer {
+        top: 1em;
+    }
+}
+
+
+
+/**
+ * PAGE HEIGHT TWEAKS FOR THIS FULL-WIDTH/FULL-HEIGHT USAGE
+ */
+
+#main-page-content {
+    padding-bottom: 0;
+}
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.navbar, footer {
+    z-index: 1;  /* so the #sidebar box-shadow does not show over them */
+}
+
+
+/**
+ * SIDEBAR STYLES AND TITLE/BUTTON LAYOUT
+ */
+
+#sidebar {
+    box-shadow: -4px 6px 10px 5px silver;
+}
+
+#sidebar-and-map div.sidebar-opener, #sidebar-and-map div.sidebar-closer {
+    background-color: #9A1C20;
+}
+#sidebar-and-map div.sidebar-opener i, #sidebar-and-map div.sidebar-closer i {
+    color: white;
+}
+
+#sidebar > h1 {
+    background-color: #9A1C20;
+    color: white;
+    line-height: 41px;  /* match to height of .sidebar-opener & .sidebar-closer */
+}
+
+#sidebar > div {  /* scrolling content, height is sidebar minus h1 */
+    max-height: calc(100% - 50px);  /* match to h1 height which depends on font size, plus a tiny bit more */
+    overflow-y: auto;
+}
+
+#sidebar h2 {
+    font-size: 16px;
+}
+
+#sidebar h3 {
+    font-size: 16px;
+}
+
+#sidebar button.btn.btn-link[data-toggle] {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid silver;
+}
+
+#sidebar div.collapse {
+}
+
+#clearselections, #clearselections a {
+    color: #9A1C20;
+    font-size: 14px;
+}
+
+#outoforder {
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/**
+ * Bootstrap modals, give a max height and scrolling
+ */
+
+div.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/**
+ * USING THIS TOOL some special touches
+ */
+
+#modal-usingthistool div.modal-body img {
+    border: 1px solid silver;
+}
+
+
+
+/**
+ * MAP HACKS for this page to get some custom control positioning
+ */
+
+.leaflet-control-scale {
+    clear: none;
+}

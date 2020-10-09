@@ -1,0 +1,70 @@
+/**
+ * GLOBAL FONT DEFAULTS
+ * but each component (navbars, etc.) will have their own font-family, we won't try to centralize that here
+ */
+
+
+/* multiple fonts in one call, at all the weights we will want */
+/* see also a Typekit script tag in header.html */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://use.typekit.net/kqq4wzr.css");  /* Calluna */
+
+
+body, td, th {
+    font-family: 'calluna', serif;
+    font-size: 16px;
+    color: #1F2526;
+    font-weight: normal;
+}
+
+h1 {
+    font-family: 'europa', sans-serif;
+    color: #1F2526;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'europa', sans-serif;
+    color: #1F2526;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1F2526;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+a {
+    color: #9A1C20;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: silver;
+    text-decoration: underline;
+}
+
+.leaflet-tooltip {
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+.leaflet-tooltip h1 {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0.25em;
+}
+
+.btn.btn-primary {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #1F2526;
+    line-height: 27px;
+    font-size: 14px;
+}

@@ -1,0 +1,17 @@
+/* controls already have 10px margin, so tighten this up a bit */
+.leaflet-container .leaflet-control-attribution {
+    margin-top: 0;
+}
+
+/* checkbox labels are clickable, and should look it */
+div.form-check label {
+    cursor: pointer;
+}
+
+/* Leaflet.EasyButton sets a width suited to a single icon, but we want more control */
+button.easy-button-button, button.easy-button-button:hover {
+    width: auto;
+
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}

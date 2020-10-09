@@ -1,0 +1,42 @@
+.leaflet-countymaplegend-control {
+    background-color:white;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea {
+    overflow-y: auto;
+    max-height: calc(100vh - 270px);
+
+    margin: 1em;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-entry {
+    padding-left: 1em;
+    font-size: 14px;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border: 1px solid black;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-swatch.legend-swatch-square {
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-swatch.legend-swatch-circle {
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-swatch.legend-swatch-nodata {
+    background: repeating-linear-gradient( 135deg, #fff, #fff 3px, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 5px );
+    border-color: transparent;
+}
+
+.leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-entry a, .leaflet-countymaplegend-control .leaflet-countymaplegend-control-legendarea .legend-entry a:hover {
+    display: inline;  /* override some Leaflet stuff */
+    color: #9A1C20;
+    font-weight: bold;
+    border: 0 none transparent;
+}

@@ -1,0 +1,15 @@
+.gin-control-zoom {
+}
+
+.gin-control-zoom a {
+    text-decoration: none !important;
+    font-size: 18px;
+}
+
+.gin-control-zoom-home span.dashicons {
+    line-height: 1.5;
+}
+
+.gin-control-zoom-in span.dashicons, .gin-control-zoom-out span.dashicons {
+    line-height: 1.75;
+}

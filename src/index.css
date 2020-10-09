@@ -1,0 +1,14 @@
+#statemap {
+    height: 560px;
+    width: 100%;
+}
+
+#countybuttons {
+    max-height: 505px;  /* match so the text input + spacing equals the #statemap height for a consistent visual effect */
+    overflow-y: auto;
+}
+
+#countybuttons > div {
+}
+#countybuttons > div a {
+}

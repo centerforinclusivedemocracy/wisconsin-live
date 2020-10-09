@@ -1,0 +1,50 @@
+.leaflet-suggestedarea-control {
+    background-color:white;
+
+    padding: 1em;
+}
+
+.leaflet-suggestedarea-control h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.leaflet-suggestedarea-control > p {
+    margin-bottom: 0;
+}
+.leaflet-suggestedarea-control a, .leaflet-suggestedarea-control a:hover {
+    display: inline;  /* override some Leaflet stuff */
+    color: #9A1C20;
+    font-weight: bold;
+    border: 0 none transparent;
+}
+
+.leaflet-suggestedarea-control .leaflet-suggestedarea-details {
+    margin-bottom: 1em;
+}
+.leaflet-suggestedarea-control .leaflet-suggestedarea-details span.leaflet-suggestedarea-swatch {
+    width: 40px; 
+    display: inline-block;
+    margin-bottom: 2px;
+    text-align: center;
+
+    background: white;
+    color: black;
+}
+.leaflet-suggestedarea-control .leaflet-suggestedarea-details span.leaflet-suggestedarea-swatch-high {
+    background-color: #BF4946;
+    color: #ffffff;
+}
+.leaflet-suggestedarea-control .leaflet-suggestedarea-details span.leaflet-suggestedarea-swatch-medium {
+    background-color: #F9B373;
+    color: #ffffff;
+}
+.leaflet-suggestedarea-control .leaflet-suggestedarea-details span.leaflet-suggestedarea-swatch-low {
+    background-color: #FEEF96;
+    color: #333333;
+}
+
+.leaflet-suggestedarea-control a.leaflet-suggestedarea-closebutton {
+    float: right;
+    font-size: 20px;
+}

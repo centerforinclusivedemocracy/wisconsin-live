@@ -1,0 +1,12 @@
+.leaflet-countypicker-control {
+    background-color:white;
+}
+.leaflet-countypicker-control select {
+    width: 300px;  /* select2 does best with a fixed width */
+
+    /* also, though we style the select2 we also style the select a little bit to reduce the real select's FOUC */
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 0.25em;
+}

@@ -1,0 +1,31 @@
+/*
+ * TOOLTIPS by tooltipster
+ */
+
+i[data-tooltip-content] {  /* give the i buttons a cursor effect */
+    cursor: pointer;
+}
+
+#tooltips { display: none; }  /* storage area for HTML tooltips */
+
+.tooltipster-base {
+    pointer-events: auto;
+}
+
+.tooltipster-box {
+    border-radius: 0 !important;
+    border: 1px solid #9A1C20 !important;
+    background: #9A1C20 !important;
+    color: #fff !important;
+    padding: 5px !important;
+    font-size: 14px !important;
+
+    a {
+        color: $white !important;
+        font-weight: bold;
+    }
+}
+
+.tooltipster-arrow-border, .tooltipster-arrow-background {
+    border-right-color: #9A1C20 !important;
+}
