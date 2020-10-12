@@ -64,13 +64,13 @@ def createSitewideCss():
     outfilename = os.path.join('.', 'sitewide.css')
     print("Creating {}".format(outfilename))
 
-    with open(outfilename, 'w') as outfile:
+    with open(outfilename, 'w', encoding='utf-8') as outfile:
         outfile.write(DONOTEDIT_MESSAGE_CSS)
 
         for filename in SITEWIDE_STYLESHEETS:
             filename = os.path.join('src', filename + '.css')
             print("    {}".format(filename))
-            with open(filename) as infile:
+            with open(filename, encoding='utf-8') as infile:
                 outfile.write(infile.read())
 
 
@@ -78,13 +78,13 @@ def createSitewideJs():
     outfilename = os.path.join('.', 'sitewide.js')
     print("Creating {}".format(outfilename))
 
-    with open(outfilename, 'w') as outfile:
+    with open(outfilename, 'w', encoding='utf-8') as outfile:
         outfile.write(DONOTEDIT_MESSAGE_JS)
 
         for filename in SITEWIDE_JAVASCRIPTS:
             filename = os.path.join('src', filename + '.js')
             print("    {}".format(filename))
-            with open(filename) as infile:
+            with open(filename, encoding='utf-8') as infile:
                 outfile.write(infile.read())
 
 
@@ -100,36 +100,36 @@ def createJoinedPages():
 
         print("Creating {}".format(outfilename_html))
 
-        with open(outfilename_html, 'w') as outfile:
+        with open(outfilename_html, 'w', encoding='utf-8') as outfile:
             for filename in infiles_html:
                 filename = os.path.join('src', filename)
                 print("    {}".format(filename))
-                with open(filename) as infile:
+                with open(filename, encoding='utf-8') as infile:
                     outfile.write(infile.read())
 
-        with open(outfilename_js, 'w') as outfile:
+        with open(outfilename_js, 'w', encoding='utf-8') as outfile:
             outfile.write(DONOTEDIT_MESSAGE_JS)
 
             for filename in infiles_js:
                 filename = os.path.join('src', filename)
                 print("    {}".format(filename))
-                with open(filename) as infile:
+                with open(filename, encoding='utf-8') as infile:
                     outfile.write(infile.read())
 
-        with open(outfilename_css, 'w') as outfile:
+        with open(outfilename_css, 'w', encoding='utf-8') as outfile:
             outfile.write(DONOTEDIT_MESSAGE_CSS)
 
             for filename in infiles_css:
                 filename = os.path.join('src', filename)
                 print("    {}".format(filename))
-                with open(filename) as infile:
+                with open(filename, encoding='utf-8') as infile:
                     outfile.write(infile.read())
 
-        with open(outfilename_html) as infile:
+        with open(outfilename_html, encoding='utf-8') as infile:
             html = infile.read()
             html = html.replace('THISPAGE.css', "{}.css".format(pagename))
             html = html.replace('THISPAGE.js', "{}.js".format(pagename))
-        with open(outfilename_html, 'w') as outfile:
+        with open(outfilename_html, 'w', encoding='utf-8') as outfile:
             outfile.write(html)
 
 
@@ -139,20 +139,20 @@ def createCacheBusting():
         outfile_html = os.path.join('.', pagename + '.html')
         print("    {}".format(outfile_html))
 
-        with open(outfile_html) as infile:
+        with open(outfile_html, encoding='utf-8') as infile:
             html = infile.read()
 
         cachetags = re.findall('(([\w\.]+)\?CACHEBUST)', html)
         for tag in cachetags:
             targetfilename = os.path.join('.', tag[1])
-            with open(targetfilename) as targetfile:
+            with open(targetfilename, encoding='utf-8') as targetfile:
                 targetcontent = targetfile.read()
-                cachebuster = 'cachebust-' + hashlib.sha256(targetcontent).hexdigest()[:10]  # this changes only if the file content has changed, NOT counting cache-buster tags            
+                cachebuster = 'cachebust-' + hashlib.sha256(targetcontent.encode('utf-8', 'ignore')).hexdigest()[:10]  # this changes only if the file content has changed, NOT counting cache-buster tags            
                 oldtag = tag[0]
                 newtag = tag[0].replace('CACHEBUST', cachebuster)
                 html = html.replace(oldtag, newtag)
 
-        with open(outfile_html, 'w') as outfile:
+        with open(outfile_html, 'w', encoding='utf-8') as outfile:
             outfile.write(html)
 
 
