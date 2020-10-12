@@ -1,0 +1,20 @@
+fieldname,section,title,description
+prc_black,population,Percent African-American Population,Percent of the tract population that is African-American alone&#x002C not Hispanic or Latino.
+prc_asian,population,Percent Asian-American Population,Percent of the tract population that is Asian-American alone&#x002C not Hispanic or Latino.
+prc_latino,population,Percent Latino Population,The percentage of the population that is Hispanic or Latino.
+prc_white,population,Percent White Population,Percent of the tract population that is White alone&#x002C not Hispanic or Latino.
+cvapdens,siting,County Percentage of Voting Age Citizens,The number of citizens in this tract who are voting age divided by the county's total number of voting age citizens.
+job_dens,siting,County Worker Percentage,The percent of employed county residents in a tract out of the total employed county residents in the county.
+tot_elignonreg_prc_final,siting,Eligible Non-Registered Voter Rate,The percentage of voting age citizens who are not registered to vote.
+prcdisabled_final,siting,Percent Disabled Population,The percentage of the population that is disabled.
+prc_latino,siting,Percent Latino Population,The percentage of the population that is Hispanic or Latino.
+prc_nonengprof_final,siting,Percent Limited English Proficient Population,The percentage of the population that has limited English proficiency.
+prc_caraccess_final,siting,Percent of Population with Vehicle Access,The percentage of the population with access to a vehicle.
+prc_pov_final,siting,Percent of the Population in Poverty,The percentage of the population with income below the poverty level.
+prc_youth_final,siting,Percent of the Youth Population,The percentage of the population between the age of 18 and 24 years old.
+pollvoter_dens,siting,Polling Place Voter Percentage,The number of voters who voted at a polling place divided by the total number of voters who voted at a polling place in the county.
+popdens,siting,Population Density,The total population density per square kilometer.
+vbm_rate_asn,siting,Vote by Mail Rate (Asian-American),The percentage of Asian-American voters who voted by mail.
+vbm_rate_lat,siting,Vote by Mail Rate (Latino),The percentage of Latino voters who voted by mail.
+vbm_rate_tot,siting,Vote by Mail Rate (Total),The percentage of voters who voted by mail.
+vbm_rate_youth,siting,Vote by Mail Rate (Youth),The percentage of voters between the age of 18 and 24 years old who voted by mail.
