@@ -18,7 +18,7 @@ const PARTICIPATING_COUNTIES = [
   { countyfp: "059", name: "Kenosha", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
   { countyfp: "063", name: "La Crosse", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
   { countyfp: "071", name: "Manitowoc", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
-  { countyfp: "073", name: "Marathon", profile: 'lite', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
+  { countyfp: "073", name: "Marathon", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
   { countyfp: "079", name: "Milwaukee", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
   { countyfp: "087", name: "Outagamie", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
   { countyfp: "089", name: "Ozaukee", profile: 'fullmodel', outoforder:"Polling location modeling will be provided for this county soon", datafootnote: "", exceptlayers: [] },
