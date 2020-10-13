@@ -10,20 +10,13 @@
         <a href="acknowledgments.html">CID's contact page</a>.
       </p>
 
-
-      <h1 id="methodology">Scope</h1>
+      <!-- <h1 id="methodology">Scope</h1>
       <div class="row">
-        <!-- <div class="col">
-          The Tool provides vote center and drop box location modeling, along with visualization of demographic and voter data for the following counties:
-          <ul id="fullAnalysisCountyList" class="card-columns"><!-- county list filled in via initFillScopeLists() -->
-        <!-- </ul> -->
-        <!-- </div> -->
         <div class="col">
           The Tool provides visualization of demographic and voter data for the following counties:
-          <ul id="liteAnalysisCountyList" class="card-columns"><!-- county list filled in via initFillScopeLists() --></ul>
+          <ul id="fullAnalysisCountyList" class="card-columns">
         </div>
-      </div>
-
+      </div> -->
 
       <h1 id="methodology">Voting Location and Ballot Drop Box Location Modeling Methodology</h1>
       <p>
@@ -38,7 +31,7 @@
 
       <h2 id="facility-location">Facility Location</h2>
       <p>
-        Wisconsin law allows county election officials the ability to choose the number of voting location and drop box sites for their jurisdiction. To generate suggested locations based on the number of sites each county has publically reported, we used a k-means model and a series of facility location models.
+        To generate suggested locations based on the number of sites each county has publically reported, we used a k-means model and a series of facility location models.
       </p>
       <p>
         First we conducted a k-means cluster analysis to aggregate populated census block sites into a smaller number of computationally manageable geographic clusters. These clusters were created by clustering on latitude/longitude. Next we estimated travel time from every census block cluster to every potential area for a voting location (defined by the “suitable areas” grid).
