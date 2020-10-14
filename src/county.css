@@ -146,6 +146,10 @@ body {
     font-style: italic;
 }
 
+#datafootnote {
+    font-weight: bold;
+    font-style: italic;
+}
 
 /**
  * Bootstrap modals, give a max height and scrolling
