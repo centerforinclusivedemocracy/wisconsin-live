@@ -30,6 +30,10 @@ function initCountyInfo () {
     $('#sidebar > h1').text(`${COUNTYINFO.name} County`);
 
     // if there is an Out Of Order message, fill in the explanation why the county is broken
+    if (COUNTYINFO.datafootnote) $('#datafootnote').text(COUNTYINFO.datafootnote);
+    else $('#datafootnote').remove();    
+
+    // if there is an Out Of Order message, fill in the explanation why the county is broken
     if (COUNTYINFO.outoforder) $('#outoforder').text(COUNTYINFO.outoforder);
     else $('#outoforder').remove();
 }
