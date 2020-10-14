@@ -6,7 +6,7 @@
 // outoforder = optional message to display in top-left of county page, indicating that this county data are questionable
 // exceptlayers = skip these layers when loading the data profile, for counties to opt-out from individual layers
 const PARTICIPATING_COUNTIES = [
-  { countyfp: "009", name: "Brown", profile: 'fullmodel', outoforder:"", datafootnote: "", exceptlayers: [] },
+  { countyfp: "009", name: "Brown", profile: 'fullmodel', outoforder:"", datafootnote: "I'm Tiny Rick!", exceptlayers: [] },
   { countyfp: "017", name: "Chippewa", profile: 'fullmodel', outoforder:"", datafootnote: "", exceptlayers: [] },
   { countyfp: "021", name: "Columbia", profile: 'fullmodel', outoforder:"", datafootnote: "", exceptlayers: [] },
   { countyfp: "025", name: "Dane", profile: 'fullmodel', outoforder:"", datafootnote: "", exceptlayers: [] },
