@@ -291,6 +291,10 @@ function initDownloadModal () {
         const $link = $(`<a href="data/${COUNTYINFO.countyfp}/${layerinfo.downloadfile}" target="_blank">${layerinfo.title}</a>`);
         $(`<li data-layer-id="${layerinfo.id}"></li>`).append($link).appendTo($listing);
     });
+    {
+        const $link = $(`<a href="data/crosswalk.pdf" target="_blank">Metadata Dictionary (PDF)</a>`);
+        $('<br>The names and definitions for each variable present in the .CSV and Shapefile data downloads are outlined below in the Metadata Dictionary PDF document<li></li>').append($link).appendTo($listing);
+    }
 }
 
 
