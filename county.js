@@ -444,13 +444,13 @@ function initCountyMap () {
     })
     .addTo(MAP);
 
-    new L.controlCredits({
-        image: './images/greeninfo.png',
-        link: 'https://www.greeninfo.org/',
-        text: 'Interactive mapping<br/>by GreenInfo Network',
-        position: 'bottomleft',
-    })
-    .addTo(MAP);
+    // new L.controlCredits({
+    //     image: './images/greeninfo.png',
+    //     link: 'https://www.greeninfo.org/',
+    //     text: 'Interactive mapping<br/>by GreenInfo Network',
+    //     position: 'bottomleft',
+    // })
+    // .addTo(MAP);
 
     MAP.BASEMAPBAR = new L.Control.BasemapBar({
         position: 'topright',

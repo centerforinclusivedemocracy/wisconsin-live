@@ -14,13 +14,13 @@ function initStatewideMap () {
         minZoom: 6,
     });
 
-    new L.controlCredits({
-        image: './images/greeninfo.png',
-        link: 'https://www.greeninfo.org/',
-        text: 'Interactive mapping<br/>by GreenInfo Network',
-        position: 'bottomright',
-    })
-    .addTo(MAP);
+    // new L.controlCredits({
+    //     image: './images/greeninfo.png',
+    //     link: 'https://www.greeninfo.org/',
+    //     text: 'Interactive mapping<br/>by GreenInfo Network',
+    //     position: 'bottomright',
+    // })
+    // .addTo(MAP);
 
     L.control.scale({
         position: 'bottomleft',

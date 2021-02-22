@@ -246,7 +246,7 @@ DATA_LAYERS.transit_stops = {
 };
 DATA_LAYERS.cvapdens = {
     id: 'cvapdens',
-    title: "County Percentage of Voting Age Citizens",
+    title: "Percent of County Voting Age Citizens",
     scoresource: 'indicatordata', scorefield:  'cvapdens',
     quantilefield: 'cvapdens', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -254,7 +254,7 @@ DATA_LAYERS.cvapdens = {
 };
 DATA_LAYERS.job_dens = {
     id: 'job_dens',
-    title: "County Worker Percentage",
+    title: "Percent of County Workers",
     scoresource: 'indicatordata', scorefield:  'job_dens',
     quantilefield: 'job_dens', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -270,7 +270,7 @@ DATA_LAYERS.tot_elignonreg_prc = {
 };
 DATA_LAYERS.prcdisabled = {
     id: 'prcdisabled',
-    title: "Percent Disabled Population",
+    title: "Disabilities Percent of Population",
     scoresource: 'indicatordata', scorefield:  'prcdisabled_final',
     quantilefield: 'prcdisabled_final', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -278,7 +278,7 @@ DATA_LAYERS.prcdisabled = {
 };
 DATA_LAYERS.prc_nonengprof = {
     id: 'prc_nonengprof',
-    title: "Percent Limited English Proficient Population",
+    title: "Limited English Proficient Percent of Population",
     scoresource: 'indicatordata', scorefield:  'prc_nonengprof_final',
     quantilefield: 'prc_nonengprof_final', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -302,7 +302,7 @@ DATA_LAYERS.prc_pov_final = {
 };
 DATA_LAYERS.prc_youth_final = {
     id: 'prc_youth_final',
-    title: "Percent of the Population Youth",
+    title: "Youth Percent of Population",
     scoresource: 'indicatordata', scorefield:  'prc_youth_final',
     quantilefield: 'prc_youth_final', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -310,7 +310,7 @@ DATA_LAYERS.prc_youth_final = {
 };
 DATA_LAYERS.pollvoter_dens = {
     id: 'pollvoter_dens',
-    title: "Polling Place Voter Percentage",
+    title: "2016 Polling Place Voter Percentage",
     scoresource: 'indicatordata', scorefield:  'pollvoter_dens',
     quantilefield: 'pollvoter_dens', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -349,7 +349,7 @@ DATA_LAYERS.vbm_rate_lat = {
     radiogroup: 'tractchoropleths',
 };
 DATA_LAYERS.vbm_rate_youth = {
-    id: 'vbm_rate_youth',
+    id: '2016 vbm_rate_youth',
     title: "2016 Vote by Mail Rate (Youth)",
     scoresource: 'indicatordata', scorefield:  'vbm_rate_youth',
     quantilefield: 'vbm_rate_youth', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
@@ -358,7 +358,7 @@ DATA_LAYERS.vbm_rate_youth = {
 };
 DATA_LAYERS.prc_black = {
     id: 'prc_black',
-    title: "Percent African-American Population",
+    title: "African-American Percent of Population",
     scoresource: 'indicatordata', scorefield: 'prc_black',
     quantilefield: 'prc_black', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -366,7 +366,7 @@ DATA_LAYERS.prc_black = {
 };
 DATA_LAYERS.prc_asian = {
     id: 'prc_asian',
-    title: "Percent Asian-American Population",
+    title: "Asian-American Percent of Population",
     scoresource: 'indicatordata', scorefield: 'prc_asian',
     quantilefield: 'prc_asian', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -374,7 +374,7 @@ DATA_LAYERS.prc_asian = {
 };
 DATA_LAYERS.prc_latino = {
     id: 'prc_latino',
-    title: "Percent Latino Population",
+    title: "Latino Percent of Population",
     scoresource: 'indicatordata', scorefield: 'prc_latino',
     quantilefield: 'prc_latino', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -382,7 +382,7 @@ DATA_LAYERS.prc_latino = {
 };
 DATA_LAYERS.prc_white = {
     id: 'prc_white',
-    title: "Percent White Population",
+    title: "White Percent of Population",
     scoresource: 'indicatordata', scorefield: 'prc_white',
     quantilefield: 'prc_white', quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
@@ -440,19 +440,28 @@ DATA_PROFILES.fullmodel = {
         DATA_LAYERS.additional_sites_model, DATA_LAYERS.additional_sites_distance,
     ],
     sitingcriteria: [
-        DATA_LAYERS.transit_stops,
         DATA_LAYERS.cvapdens, DATA_LAYERS.job_dens,
         DATA_LAYERS.tot_elignonreg_prc,
-        DATA_LAYERS.prcdisabled, DATA_LAYERS.prc_nonengprof, DATA_LAYERS.prc_caraccess_final, DATA_LAYERS.prc_pov_final, DATA_LAYERS.prc_youth_final,
-        DATA_LAYERS.pollvoter_dens,
+        DATA_LAYERS.prc_caraccess_final, DATA_LAYERS.prc_pov_final, 
         DATA_LAYERS.popdens,
+        DATA_LAYERS.pollvoter_dens,
         DATA_LAYERS.vbm_rate_tot, DATA_LAYERS.vbm_rate_asn, DATA_LAYERS.vbm_rate_lat, DATA_LAYERS.vbm_rate_youth,
     ],
     populationdata: [
-        DATA_LAYERS.prc_black, DATA_LAYERS.prc_asian, DATA_LAYERS.prc_latino, DATA_LAYERS.prc_white,
+        DATA_LAYERS.prc_black, 
+        DATA_LAYERS.prc_asian,
+        DATA_LAYERS.prc_latino, 
+        DATA_LAYERS.prc_white, 
+        DATA_LAYERS.prc_youth_final,
+        DATA_LAYERS.prcdisabled, 
+        DATA_LAYERS.prc_nonengprof, 
     ],
     pointsofinterest: [
-        DATA_LAYERS.pripoll2020,DATA_LAYERS.poi_govish, DATA_LAYERS.poi_misc, DATA_LAYERS.poi,
+        DATA_LAYERS.pripoll2020,
+        DATA_LAYERS.transit_stops,
+        DATA_LAYERS.poi_govish, 
+        DATA_LAYERS.poi_misc, 
+        DATA_LAYERS.poi,
         DATA_LAYERS.munibounds,
     ],
 };
