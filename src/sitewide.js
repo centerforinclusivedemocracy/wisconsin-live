@@ -258,7 +258,7 @@ DATA_LAYERS.job_dens = {
 };
 DATA_LAYERS.tot_elignonreg_prc = {
     id: 'tot_elignonreg_prc',
-    title: "Eligible Non-Registered Voter Rate",
+    title: "Percent of Eligible Voters Not Registered",
     scoresource: 'indicatordata', scorefield:  'tot_elignonreg_prc_final',
     quantilefield: 'tot_elignonreg_prc_final' , quantilecolors: CRITERIA_COLOR_RAMP, breaksource: 'indicatordata', // because fillColor == quantile
     legendformat: 'percent',
